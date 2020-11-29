@@ -4,6 +4,117 @@ please check Examples/heebin/custom1.cc (id with 2.cc)
 slam result will send to unity socket server
 
 
+# install guide with naive ubuntu 16.04 (may with wsl)
+
+apt-get install -y unzip
+sudo apt install -y git
+
+
+mkdir OpenCV
+cd OpenCV
+wget https://gist.githubusercontent.com/eungbean/0880de7604472219c7e3f6ddb7cebde5/raw/443d629bf83b65bb59e34564626f872ab1124b3f/opencv-3.4.0-install-script.sh
+sudo bash opencv-3.4.0-install-script.sh
+cd ..
+
+
+sudo apt-get install openjdk-8-jre openjdk-8-jdk
+
+sudo apt -y install g++ cmake cmake-gui doxygen mpi-default-dev openmpi-bin openmpi-common libusb-1.0-0-dev libqhull* libusb-dev libgtest-dev
+sudo apt -y install git-core freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libphonon-dev libphonon-dev phonon-backend-gstreamer
+sudo apt -y install phonon-backend-vlc graphviz mono-complete qt-sdk libflann-dev libflann1.8 libboost1.58-all-dev
+
+sudo apt install libgl1-mesa-dev libglew-dev  cmake  libpython2.7-dev ffmpeg libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libavdevice-dev libdc1394-22-dev libraw1394-dev libjpeg-dev libpng12-dev libtiff5-dev libopenexr-dev libproj-dev
+
+
+
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.8/eigen-3.3.8.tar.gz
+tar -xvf eigen-3.3.8.tar.gz
+cd eigen-3.3.8/
+mkdir build
+cd build
+cmake ../
+make -j6
+cd ..
+
+
+Pangolin 
+
+
+git clone https://github.com/stevenlovegrove/Pangolin.git
+cd Pangolin
+mkdir build
+cd build
+cmake ..
+cmake —build .
+make -j32
+
+
+
+PCL이랑 VTK 라는 이상한 플롯 라이브러리를 설치하자 ㅠㅠ
+https://lsdtopotools.github.io/LSDTT_documentation/LSDTT_installation.html#_install_the_point_cloud_library
+
+
+
+$ wget http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz
+$ tar -xf VTK-7.1.0.tar.gz
+$ cd VTK-7.1.0 && mkdir build && cd build
+$ cmake ..
+$ make
+$ sudo make install
+
+Now install the Point Cloud Library v1.8:
+(크기가 커서 cpu 여러개 쓰면 메모리 깨진다. 15기가는 여유두고 돌려라)
+(use more than 15G ram,make without -j keyword(too heavy))
+
+$ cd ~/Downloads
+$ wget https://github.com/PointCloudLibrary/pcl/archive/pcl-1.8.0.tar.gz
+$ tar -xf pcl-1.8.0.tar.gz
+$ cd pcl-pcl-1.8.0 && mkdir build && cd build
+$ cmake ..
+$ make
+$ sudo make install
+
+
+
+
+
+---------------------------------------------------final
+git clone https://github.com/yanyan-li/Structure-SLAM-PointLine.git
+
+
+  673  cd Thirdparty/
+  674  ls
+  675  cd DBoW2/
+  676  ls
+  677  rm -rf build/
+  678  cd ..
+  679  ls
+  680  cd g2o/
+  681  ls
+  682  rm -rf build/
+  683  ls
+  684  cd ..
+
+  687  sudo ./build.sh
+
+
+
+
+
+# with wsl & xming
+
+check 'setup' folder
+
+check - display error
+https://woojjang.tistory.com/52
+
+check - portforwarding
+https://gmyankee.tistory.com/308
+
+
+
+
+
 
 
 # ORB-SLAM2
