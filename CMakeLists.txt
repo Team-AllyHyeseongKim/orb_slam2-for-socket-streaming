@@ -111,3 +111,21 @@ add_executable(mono_euroc
 Examples/Monocular/mono_euroc.cc)
 target_link_libraries(mono_euroc ${PROJECT_NAME})
 
+
+
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/heebin)
+
+add_executable(custom
+Examples/heebin/custom.cc)
+target_link_libraries(custom ${PROJECT_NAME})
+
+
+add_executable(custom1
+Examples/heebin/custom1.cc)
+target_link_libraries(custom1 ${PROJECT_NAME})
+
+add_executable(custom2
+Examples/heebin/custom2.cc)
+target_link_libraries(custom2 ${PROJECT_NAME})
+
